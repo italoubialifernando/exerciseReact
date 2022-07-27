@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HelloWorld } from "./HelloWorld";
+import { Wellcome } from "./Wellcome";
 import { Message } from "./Message";
 
 
@@ -8,7 +8,7 @@ export class App extends React.Component{
     render() {
         return(
             <div>
-                <HelloWorld name={"Don Quijote de La Mancha"}/>
+                <Wellcome name={"Don Quijote de La Mancha"} age={"82?"}/>
                 <Message />
             </div>
         )
