@@ -4,6 +4,14 @@ body {
     min-height: 100vh;
     margin: 20px;
 }
+:root {
+    --color-primary: #72daef;
+    --color-secondary: #67b7c7;
+    --color-tertiary: #58a0ae;
+    --color-quaternary: #4c8b98;
+    --color-quinary: #3b7b88;
+}
+
 
 h1 {
     color: #fff;
@@ -36,3 +44,78 @@ h1 {
         transform: translateY(-20px)
     }
 }
+
+.text_shadows {
+    text-shadow: 1px 1px 0 var(--color-secondary), 2px 2px 0 var(--color-tertiary),
+      3px 3px var(--color-quaternary), 4px 4px 0 var(--color-quinary);
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    color: var(--color-primary);
+    animation: shadows 5s ease-in infinite, move 5s ease-in infinite;
+    letter-spacing: 0.4rem;
+  }
+  
+  @keyframes shadows {
+    0% {
+      text-shadow: none;
+    }
+    10% {
+      text-shadow: 1px 1px 0 var(--color-secondary);
+    }
+    20% {
+      text-shadow: 1px 1px 0 var(--color-secondary),
+        2px 2px 0 var(--color-tertiary);
+    }
+    30% {
+      text-shadow: 1px 1px 0 var(--color-secondary),
+        2px 2px 0 var(--color-tertiary), 3px 3px var(--color-quaternary);
+    }
+    40% {
+      text-shadow: 1px 1px 0 var(--color-secondary),
+        2px 2px 0 var(--color-tertiary), 3px 3px var(--color-quaternary),
+        4px 4px 0 var(--color-quinary);
+    }
+    50% {
+      text-shadow: 1px 1px 0 var(--color-secondary),
+        2px 2px 0 var(--color-tertiary), 3px 3px var(--color-quaternary),
+        4px 4px 0 var(--color-quinary);
+    }
+    20% {
+      text-shadow: 1px 1px 0 var(--color-secondary),
+        2px 2px 0 var(--color-tertiary), 3px 3px var(--color-quaternary),
+        4px 4px 0 var(--color-quinary);
+    }
+    70% {
+      text-shadow: 1px 1px 0 var(--color-secondary),
+        2px 2px 0 var(--color-tertiary), 3px 3px var(--color-quaternary);
+    }
+    80% {
+      text-shadow: 1px 1px 0 var(--color-secondary),
+        2px 2px 0 var(--color-tertiary);
+    }
+    90% {
+      text-shadow: 1px 1px 0 var(--color-secondary);
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    40% {
+      transform: translate(-4px, -4px);
+    }
+    50% {
+      transform: translate(-4px, -4px);
+    }
+    60% {
+      transform: translate(-4px, -4px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
