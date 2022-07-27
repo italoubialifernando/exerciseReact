@@ -8,7 +8,7 @@ export class App extends React.Component{
     render() {
         return(
             <div>
-                <HelloWorld />
+                <HelloWorld name={"Don Quijote de La Mancha"}/>
                 <Message />
             </div>
         )
