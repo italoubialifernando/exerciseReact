@@ -5,19 +5,21 @@ export class CounterDisplay extends React.Component {
         count: this.props.initialValue
     }
 
-    constructor(props){
-        super(props)
-    
-        setInterval(()=> {this.setState({
-            cont: this.state.count + this.props.incrementBy
-        })}, 1000)
+// credo di no perche e tipo un use effect renderiza dopo il caricamente della page creddooo...
+    componentDidMount() {
+        setInterval(() => {
+            this.setState((state) => {
+                return{
+                 cont: state.count += this.props.incrementBy   
+                }
+            })
+        }, 1000)
 
     }
-   
-    
 
 
-    render  () {
+
+    render() {
         return (
             <div>
                 <h1> count: {this.state.count}</h1>
@@ -26,7 +28,7 @@ export class CounterDisplay extends React.Component {
 }
 
 
-Counter.defaultProps = {
+CounterDisplay.defaultProps = {
     initialValue: 0,
     incrementBy: 1,
 }
