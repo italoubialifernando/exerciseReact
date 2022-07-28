@@ -2,14 +2,14 @@ import React from "react";
 
 export class Counter extends React.Component {
     state = {
-        count: 0
+        count: this.props.initialValue
     }
 
     constructor(props){
         super(props)
     
         setInterval(()=> {this.setState({
-            cont: this.state.count +=1,
+            cont: this.state.count + this.props.incrementBy
         })}, 1000)
 
     }
@@ -26,3 +26,7 @@ export class Counter extends React.Component {
 }
 
 
+Counter.defaultProps = {
+    initialValue: 0,
+    incrementBy: 1,
+}
