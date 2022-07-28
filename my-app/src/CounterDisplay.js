@@ -1,6 +1,6 @@
 import React from "react";
 
-export class Counter extends React.Component {
+export class CounterDisplay extends React.Component {
     state = {
         count: this.props.initialValue
     }
