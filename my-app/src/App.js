@@ -8,7 +8,7 @@ export class App extends React.Component{
     render() {
         return(
             <div>
-                <Wellcome name={<strong>{"Don Quijote de La Mancha"}</strong>} age={"82?"}/>
+                <Wellcome name={"john"} age={68}/>
                 <Message />
             </div>
         )
