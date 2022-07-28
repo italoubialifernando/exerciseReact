@@ -5,7 +5,7 @@ export class CounterDisplay extends React.Component {
         count: this.props.initialValue
     }
 
-// credo di no perche e tipo un use effect renderiza dopo il caricamente della page creddooo...
+
     componentDidMount() {
         setInterval(() => {
             this.setState((state) => {
@@ -13,9 +13,19 @@ export class CounterDisplay extends React.Component {
                  cont: state.count += this.props.incrementBy   
                 }
             })
-        }, 1000)
-
+        }, 1000)        
     }
+
+
+    handleCounterIncrement = ()=> {
+        
+        this.setState(state => {
+            return {
+                count: state.count + Math.random()
+            }
+        })
+    }
+
 
 
 
@@ -23,6 +33,7 @@ export class CounterDisplay extends React.Component {
         return (
             <div>
                 <h1> count: {this.state.count}</h1>
+                <button onClick={this.handleCounterIncrement}>increment</button>
             </div>)
     }
 }
