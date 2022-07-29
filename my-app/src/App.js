@@ -5,6 +5,7 @@ import { Message } from "./Message";
 /* import { CounterDisplay } from "./CounterDisplay"; */
 import { ClickTracker } from "./ClickTracker";
 import { InteractiveWelcome } from "./InteractiveWelcome";
+import { Login } from "./Login";
 
 
 export class App extends React.Component{
@@ -14,6 +15,7 @@ export class App extends React.Component{
                 <InteractiveWelcome/>
                 <Message />
                 <ClickTracker />
+                <Login />
             </div>
         )
     }
