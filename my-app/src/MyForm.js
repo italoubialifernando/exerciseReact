@@ -1,12 +1,10 @@
 import React from "react";
 
-export class Login extends React.Component{
+export class MyForm extends React.Component{
     state ={
         username: '',
         password :'',
         checked : '',
-        login: false ,
-        disabled : ''
     }
 
     handleInputChange = (event) => {
@@ -17,23 +15,24 @@ export class Login extends React.Component{
 
         this.setState({
             [name]: type === 'checkbox' ? checked : value,
-            disabled : ( (this.state.username.length > 0 &&  this.state.password.length> 0 ) ? !!true : !!false)
-       
         })
-    
     }
 
-    handleLogin=() =>{
-        this.setState({
-            login : true
-        })       
-    }
+
     
+    componentDidUpdate(){
+        console.log(this.state)
+    }
 
     render(){
         return (
             <div>
-                <h1>Login? </h1>
+                <h1>my form blrg</h1>
+
+                <div>
+                    <button onClick={this.handleResetState}>Reset</button>
+                    <button onClick={this.handlePrefilFormState}>Prefil form</button>
+                </div>
 
                 <div>
                     <input
@@ -54,7 +53,6 @@ export class Login extends React.Component{
                     onChange ={this.handleInputChange}                
                     />
                 </div>
-                <button disabled={!this.state.disabled} onClick={this.handleLogin}>login?</button>
             </div>
         )
     }
