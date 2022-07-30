@@ -1,4 +1,5 @@
 import React from "react";
+import { ClickTracker } from "./ClickTracker";
 import { Wellcome } from "./Wellcome";
 
 export class InteractiveWelcome extends React.Component {
@@ -22,9 +23,10 @@ export class InteractiveWelcome extends React.Component {
             <div>
                 <Wellcome name={this.state.WelcomeName} age={this.state.age} />
                 <form>
-                    <input  name="WelcomeName" value={this.state.WelcomeName} onChange={this.HandleInputChange} />
-                    <input  name="age" value={this.state.age} onChange={this.HandleInputChange} />
+                    <input placeholder="Your name is john?" name="WelcomeName" value={this.state.WelcomeName} onChange={this.HandleInputChange} />
+                    <input placeholder="age?" name="age" value={this.state.age} onChange={this.HandleInputChange} />
                 </form>
+                <ClickTracker />
             </div>)
     }
 }

@@ -1,0 +1,57 @@
+* {
+    color: white;
+    margin: 20px;
+}
+
+body {
+    background-color: black
+}
+
+.welcome {
+    border-width: 3px;
+    border-style: solid;
+    border-image:
+        linear-gradient(to top,
+            rgba(255, 255, 255),
+            transparent 70%) 1 100%;
+    animation: border 7s ease-in-out infinite;
+}
+
+@keyframes border {
+    0% {
+        border-image:
+            linear-gradient(to top,
+                rgba(255, 255, 255),
+                transparent 70%) 1 100%;
+    }
+
+    50% {
+        border-image:
+            linear-gradient(to bottom,
+                rgba(255, 255, 255),
+                transparent 70%) 1 100%;
+    }
+
+    100% {
+        border-image:
+            linear-gradient(to top,
+                rgba(255, 255, 255),
+                transparent 70%) 1 100%;
+    }
+
+
+}
+
+
+input {
+    color: black;
+}
+
+button {
+    background-color: transparent;
+    border-radius: 0px 3px 0px 3px;
+    border: 2px solid white;
+}
+.border-no{
+    border: 0px;
+}
