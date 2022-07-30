@@ -1,28 +1,46 @@
 import React from "react";
+import { Message } from "./Message";
 
 export class ClickTracker extends React.Component {
     state = {
-        buttonPress: "button ?"
+        buttonPress: "",
+        hidden: "none",
+        hidden2: "none"
     }
 
 
-    handleButton = (e)=> {
+    handleButton = (e) => {
         this.setState(() => {
             return {
-                buttonPress: e.target.name
+                buttonPress: e.target.name,
+                hidden2: "block"
             }
         })
-     
+
+    }
+    handleShow = () => {
+        this.setState(() => {
+            return {
+                hidden: "block"
+            }
+        })
     }
 
 
-    render  () {
+    render() {
         return (
             <div>
-                <button name="Jack Daniel's" onClick={this.handleButton}>Jack Daniel's</button>
-                <button name="The Glenlivet" onClick={this.handleButton}>The Glenlivet</button>
-                <button name="Johnnie Walker" onClick={this.handleButton}>Johnnie Walker</button>
-                <h1>You press: { this.state.buttonPress}</h1> 
+                <button className="border-no" onClick={this.handleShow}>
+                    <Message />
+                </button>
+                <div style={{ display: this.state.hidden }}>
+                    <button name="Jack Daniel's" onClick={this.handleButton}>Jack Daniel's</button>
+                    <button name="The Glenlivet" onClick={this.handleButton}>The Glenlivet</button>
+                    <button name="Johnnie Walker" onClick={this.handleButton}>Johnnie Walker</button>
+                </div>
+                <div style={{ display: this.state.hidden2 }}>
+                    <h1>You chose: {this.state.buttonPress}</h1>
+                </div>
             </div>)
     }
 }
