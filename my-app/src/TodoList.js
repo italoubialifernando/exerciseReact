@@ -24,10 +24,15 @@ export class TodoList extends React.Component {
             addListItem : ''
         })
     }
-    HandleClearList =() =>{
+    HandleClearList =() => {
         list = []
         this.forceUpdate()
-    } 
+    }
+
+    HandleRemove = (e)=>{
+        ((e.target).parentNode).remove()
+    }
+    
 
 
 
@@ -37,15 +42,16 @@ export class TodoList extends React.Component {
         return(
             <div>
                 <ul>
-                <ul>{list.map((name, index) => (<li key={name + index}>{name}</li>))}</ul>
+                {list.map((name, index) => (
+                <li key={name + index}>{name}<button onClick={this.HandleRemove}>remove</button></li>))}
                 </ul>
                 <input
                     name="addListItem,"
                     value ={this.state.addListItem}
                     onChange ={this.handleInputChange}
                 />
-                <button on onClick={this.HandleItemList}>Add list item</button>
-                <button on onClick={this.HandleClearList}>Clear List</button>
+                <button on onClick={this.HandleItemList}>add list item</button>
+                <button on onClick={this.HandleClearList}>Clear list</button>
             </div>
         )
     }
