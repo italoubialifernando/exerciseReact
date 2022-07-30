@@ -52,3 +52,6 @@ button {
     border-radius: 0px 3px 0px 3px;
     border: 2px solid white;
 }
+.border-no{
+    border: 0px;
+}
