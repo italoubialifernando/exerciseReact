@@ -2,7 +2,7 @@ import React from "react";
 
 
 import { InteractiveWelcome } from "./InteractiveWelcome";
-import { UncontrolledLogin } from "./UncontrolledLogin";
+import { Login } from "./Login";
 import { TodoList } from "./TodoList";
 
 
@@ -11,7 +11,7 @@ export class App extends React.Component{
         return(
             <div>
                 <InteractiveWelcome /> 
-                <UncontrolledLogin />
+                <Login />
                 <TodoList />
             </div>
         )

@@ -6,7 +6,8 @@ export class Login extends React.Component{
         password :'',
         checked : '',
         login: false ,
-        disabled : ''
+        disabled : '',
+        color: 'red'
     }
 
     handleInputChange = (event) => {
@@ -17,8 +18,8 @@ export class Login extends React.Component{
 
         this.setState({
             [name]: type === 'checkbox' ? checked : value,
-            disabled : ( (this.state.username.length > 0 &&  this.state.password.length> 0 ) ? !!true : !!false)
-       
+            disabled : ( (this.state.username.length > 0 &&  this.state.password.length> 0 ) ? true : false),
+           color:(this.state.password.length> 6? 'black': 'red') 
         })
     
     }
@@ -26,8 +27,10 @@ export class Login extends React.Component{
     handleLogin=() =>{
         this.setState({
             login : true
-        })       
+        })
+ 
     }
+
     handleResetState =() => {
         this.setState({
             username: '',
@@ -62,7 +65,7 @@ export class Login extends React.Component{
                     onChange ={this.handleInputChange}                
                     />
                 </div>
-                <button disabled={!this.state.disabled} onClick={this.handleLogin}>login?</button>
+                <button style={{backgroundColor : this.state.color}} disabled={!this.state.disabled} onClick={this.handleLogin}>login?</button>
                 <button onClick={this.handleResetState}>Reset</button>
             </div>
         )
