@@ -20,6 +20,9 @@ export class TodoList extends React.Component {
     HandleItemList =()=>{
         list.push(this.state.addListItem)
         this.forceUpdate()
+        this.setState({
+            addListItem : ''
+        })
     }
     
 
