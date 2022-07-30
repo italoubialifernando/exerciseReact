@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const list = ["buy milk", "buy another milk", "drink more milk"]
+let list = ["buy milk", "buy another milk", "drink more milk"]
 
 
 
@@ -24,7 +24,10 @@ export class TodoList extends React.Component {
             addListItem : ''
         })
     }
-    
+    HandleClearList =() =>{
+        list = []
+        this.forceUpdate()
+    } 
 
 
 
@@ -41,7 +44,8 @@ export class TodoList extends React.Component {
                     value ={this.state.addListItem}
                     onChange ={this.handleInputChange}
                 />
-                <button on onClick={this.HandleItemList}>add list item</button>
+                <button on onClick={this.HandleItemList}>Add list item</button>
+                <button on onClick={this.HandleClearList}>Clear List</button>
             </div>
         )
     }
