@@ -2,7 +2,7 @@ import React from 'react'
 
 export class Wellcome extends React.Component {
     render() {
-        return <div>
+        return <div className='welcome'>
 
             {!!this.props.name && <h1>Hellow, {this.props.name}!</h1>}
             {!this.props.name && <h1>Hellow, nobody !</h1>}
