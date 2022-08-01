@@ -1,4 +1,5 @@
 import React from "react";
+import { Conteiner } from "./Conteiner";
 
 
 import { InteractiveWelcome } from "./InteractiveWelcome";
@@ -6,14 +7,14 @@ import { Login } from "./Login";
 import { TodoList } from "./TodoList";
 
 
-export class App extends React.Component{
+export class App extends React.Component {
     render() {
-        return(
-            <div>
-                <InteractiveWelcome /> 
+        return (
+            <Conteiner title="to the moon">
+                <InteractiveWelcome />
                 <Login />
                 <TodoList />
-            </div>
+            </Conteiner>
         )
     }
 }   
