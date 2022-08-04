@@ -8,12 +8,24 @@ import { TodoList } from "./TodoList";
 
 
 export class App extends React.Component {
+    HandleRemove = (e) => {
+        ((e.target).parentNode).remove()
+    }
     render() {
+        
         return (
             <Conteiner title="to the moon">
                 <InteractiveWelcome />
                 <Login />
-                <TodoList />
+                <TodoList render={(list) => list.map((name, index) => (
+                    <li key={name + index}>{name}
+                        <button onClick={this.HandleRemove}>
+                            remove
+                        </button>
+                    </li>
+                    ))}
+                    
+                />
             </Conteiner>
         )
     }
