@@ -18,7 +18,11 @@ export function CounterDisplay({ initialValue = 0 }) {
         </div>)
 }
 
-/* export class CounterDisplay extends React.Component {
+/* 
+import React from "react";
+
+
+export class CounterDisplay extends React.Component {
     state = {
         count: this.props.initialValue
     }
