@@ -5,6 +5,7 @@ import { Conteiner } from "./Conteiner";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LenguageContext } from "./LanguageContext";
 import { Login } from "./Login";
+import { Sum } from "./Sum";
 import { TodoList } from "./TodoList";
 
 
@@ -44,9 +45,8 @@ export class App extends React.Component {
                                     remove
                                 </button>
                             </li>
-                        ))}
-
-                        />
+                        ))}/>
+                        <Sum numbers={[1, 3, 5, 356]} />
                     </Conteiner>
                 </LenguageContext.Provider>
             </div>
