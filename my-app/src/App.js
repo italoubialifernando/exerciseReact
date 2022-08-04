@@ -24,11 +24,7 @@ export class App extends React.Component {
         })
     }
 
-
     render() {
-
-
-
         return (
             <div>
                 <select style={{backgroundColor: "black"}} value={this.state.lenguage} onChange={this.handleLenguageChange}>

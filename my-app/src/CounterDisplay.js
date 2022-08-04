@@ -5,24 +5,50 @@ import { useState, useEffect } from "react";
 export function CounterDisplay({ initialValue = 0 }) {
 
     const [count, setCount] = useState(initialValue)
+    let [timer, setTimer] = useState(initialValue)
+    const [show, setShow] = useState(false)
 
     function handleCounterIncrement() {
         setCount(count + Math.random())
     }
 
+    function handleShowtimer() {
+        setShow((s)=> !s)
+    }
+
+
+    useEffect(() => {
+       const interval = setInterval(() => {
+            setTimer(timer + Math.random())
+        }, 1000);
+        return () => clearInterval(interval);
+    })
+    
+    useEffect(() => {
+            setTimer((t)=> t= 0)
+    },[show])
+
+
+
     function onCounterChange(x) {
         console.log(x)
     }
 
-    useEffect(()=>{
-        onCounterChange(count) 
-    },[count])
+    useEffect(() => {
+        onCounterChange(count)
+    }, [count])
 
     return (
         <div>
             <h1> count: {count}</h1>
             <button onClick={handleCounterIncrement}>increment</button>
+            <button onClick={handleShowtimer}>{show?"i don't like numbers":"random timer"}</button>
+            {show && <h2>maybe a timer? {timer}</h2>}
         </div>)
+
+
+
+
 }
 
 /* 
