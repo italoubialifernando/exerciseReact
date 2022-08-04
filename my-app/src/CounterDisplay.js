@@ -1,6 +1,24 @@
-import React from "react";
+import { useState } from "react";
 
-export class CounterDisplay extends React.Component {
+
+
+export function CounterDisplay({ initialValue = 0 }) {
+   
+    const [count, setCount] = useState(initialValue)
+
+    function handleCounterIncrement() {
+        setCount(count + Math.random()) 
+           console.log(initialValue)
+    }
+
+    return (
+        <div>
+            <h1> count: {count}</h1>
+            <button onClick={handleCounterIncrement}>increment</button>
+        </div>)
+}
+
+/* export class CounterDisplay extends React.Component {
     state = {
         count: this.props.initialValue
     }
@@ -42,4 +60,4 @@ export class CounterDisplay extends React.Component {
 CounterDisplay.defaultProps = {
     initialValue: 0,
     incrementBy: 1,
-}
+} */
