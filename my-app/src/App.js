@@ -1,5 +1,6 @@
 import React from "react";
 import { Conteiner } from "./Conteiner";
+import { CounterDisplay } from "./CounterDisplay";
 
 
 import { InteractiveWelcome } from "./InteractiveWelcome";
@@ -47,6 +48,7 @@ export class App extends React.Component {
                             </li>
                         ))}/>
                         <Sum />
+                        <CounterDisplay />
                     </Conteiner>
                 </LenguageContext.Provider>
             </div>
