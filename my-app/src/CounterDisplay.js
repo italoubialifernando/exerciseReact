@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 
 export function CounterDisplay({ initialValue = 0 }) {
-   
+
     const [count, setCount] = useState(initialValue)
 
     function handleCounterIncrement() {
-        setCount(count + Math.random()) 
-           console.log(initialValue)
+        setCount(count + Math.random())
     }
+
+    function onCounterChange(x) {
+        console.log(x)
+    }
+
+    useEffect(()=>{
+        onCounterChange(count) 
+    },[count])
 
     return (
         <div>
