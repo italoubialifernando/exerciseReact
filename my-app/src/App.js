@@ -12,24 +12,29 @@ export class App extends React.Component {
     HandleRemove = (e) => {
         ((e.target).parentNode).remove()
     }
-    render() {
-        state = {
-            lenguage: "en"
-        }
-        handleLenguageChange = (event) => {
-            this.setState({
-                lenguage: event.target.value
+    state = {
+        lenguage: "en"
+    }
+    handleLenguageChange = (event) => {
+        this.setState({
+            lenguage: event.target.value
 
-            })
-        }
+        })
+    }
+
+
+    render() {
+
+
 
         return (
             <div>
-                <select value={this.state.lenguage} onChange={this.handleLenguageChange}>
-                    <option value="en">ENGLISH</option>
-                    <option value="it">ITALIAN</option>
+                <select style={{backgroundColor: "black"}} value={this.state.lenguage} onChange={this.handleLenguageChange}>
+                    <option value="En">ENGLISH</option>
+                    <option value="It">ITALIAN</option>
                 </select>
                 <LenguageContext.Provider value={this.state.language}>
+                    <h1>{this.state.lenguage}</h1>
                     <Conteiner title="to the moon">
                         <InteractiveWelcome />
                         <Login />
