@@ -46,7 +46,7 @@ export class App extends React.Component {
                                 </button>
                             </li>
                         ))}/>
-                        <Sum numbers={[1, 3, 5, 356]} />
+                        <Sum />
                     </Conteiner>
                 </LenguageContext.Provider>
             </div>
