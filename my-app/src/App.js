@@ -1,7 +1,8 @@
 import React from "react";
 import { Conteiner } from "./Conteiner";
+import { GitHubUserList } from "./GitHubUserList";
 /* import { CounterDisplay } from "./CounterDisplay"; */
-import { GitHubUser } from "./GitHubUser";
+
 
 /* 
 import { InteractiveWelcome } from "./InteractiveWelcome";
@@ -14,7 +15,7 @@ import { TodoList } from "./TodoList";
 export function App() {
     return (
         <Conteiner>
-            <GitHubUser username="italoubialifernando" />
+            <GitHubUserList />
         </Conteiner>
     )
 
