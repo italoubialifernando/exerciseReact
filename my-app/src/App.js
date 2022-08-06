@@ -1,6 +1,7 @@
 import React from "react";
 import { Conteiner } from "./Conteiner";
 import { GitHubUserList } from "./GitHubUserList";
+import { HookCounter } from "./HookCounter";
 /* import { CounterDisplay } from "./CounterDisplay"; */
 
 
@@ -16,6 +17,7 @@ export function App() {
     return (
         <Conteiner>
             <GitHubUserList />
+            <HookCounter />
         </Conteiner>
     )
 
