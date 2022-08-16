@@ -1,4 +1,5 @@
 import React from "react";
+import { CarDetails } from "./CarDetails";
 import { Conteiner } from "./Conteiner";
 import { GitHubUserList } from "./GitHubUserList";
 import { HookCounter } from "./HookCounter";
@@ -18,6 +19,7 @@ export function App() {
         <Conteiner>
             <GitHubUserList />
             <HookCounter />
+            <CarDetails />
         </Conteiner>
     )
 
