@@ -1,25 +1,13 @@
-import { useState } from "react";
+import { useLogin } from "./useLogin";
 
 export function Login() {
-    const [data, setData] = useState({
-        username: '',
-        password: '',
-        remember: false
-    })
-
-    function handleInputChange(event) {
-        const { name, type, value, checked } = event.target
-        setData((data) => {
-            return { ...data, [name]: type === 'checkbox' ? checked : value }
-        })
-
-    }
+const {username, password, remember, imputChange }= useLogin()
 
     return (
         <form>
-            <input onChange={handleInputChange} value={data.username} name="username" />
-            <input onChange={handleInputChange} value={data.password} name="password" />
-            <input onChange={handleInputChange} checked={data.remember} name="remember" type="checkbox" />
+            <input onChange={imputChange} value={username} name="username" />
+            <input onChange={imputChange} value={password} name="password" />
+            <input onChange={imputChange} checked={remember} name="remember" type="checkbox" />
         </form>
     )
 }
