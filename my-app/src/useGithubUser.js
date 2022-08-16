@@ -1,17 +1,32 @@
 import { useState } from "react";
 
 export function GitHubUserList(user) {
+    const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
 
-    const [data, setData] = useState('');
-  
-    function FetchGithubUser() {
-        fetch(`https://api.github.com/users/${user}`)
-            .then(response => { return response.json() })
-            .then(json => {setData(json)})
+    async function FetchGithubUser(user) {
+        setLoading(true)
+        setError(null)
+
+        try {
+             const response = await fetch(`https://api.github.com/users/${user}`)
+             const json = await response.json()
+             setData(json)
+        }catch(e){
+            setError(e)
+            setData(null)
+        }finally{
+            setLoading(false)
+        }
     }
+      
+    
     return {
         fetchUser: FetchGithubUser(),
-        dataUser:data
+        data,
+        error,
+        loading
     }
 }
