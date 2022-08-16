@@ -1,3 +1,11 @@
-import { createContext } from "react";
+import {  useContext } from "react";
 
-export const LenguageContext = createContext('en')
+export function DisplayLanguage(){
+    const language= useContext(LanguageContext)
+
+    return(
+        <div>
+            <h1>Current lenguage: {language}</h1>
+        </div>
+    )
+}
