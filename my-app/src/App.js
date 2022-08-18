@@ -1,27 +1,13 @@
 import React from "react";
-import { CarDetails } from "./CarDetails";
+
 import { Conteiner } from "./Conteiner";
-import { GitHubUserList } from "./GitHubUserList";
-import { HookCounter } from "./HookCounter";
-import { ListFiltered } from "./ListFiltered";
-/* import { CounterDisplay } from "./CounterDisplay"; */
+import { Wellcome } from "./Wellcome";
 
-
-/* 
-import { InteractiveWelcome } from "./InteractiveWelcome";
-import { LenguageContext } from "./LanguageContext";
-import { Login } from "./Login";
-import { Sum } from "./Sum";
-import { TodoList } from "./TodoList";
- */
 
 export function App() {
     return (
         <Conteiner>
-            <GitHubUserList />
-            <HookCounter />
-            <ListFiltered />x\
-            <CarDetails />
+            <Wellcome />
         </Conteiner>
     )
 
