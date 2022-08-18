@@ -3,6 +3,7 @@ import { CarDetails } from "./CarDetails";
 import { Conteiner } from "./Conteiner";
 import { GitHubUserList } from "./GitHubUserList";
 import { HookCounter } from "./HookCounter";
+import { ListFiltered } from "./ListFiltered";
 /* import { CounterDisplay } from "./CounterDisplay"; */
 
 
@@ -19,6 +20,7 @@ export function App() {
         <Conteiner>
             <GitHubUserList />
             <HookCounter />
+            <ListFiltered />x\
             <CarDetails />
         </Conteiner>
     )
