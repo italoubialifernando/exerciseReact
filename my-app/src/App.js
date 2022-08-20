@@ -1,13 +1,18 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 
 import { Conteiner } from "./Conteiner";
 import { Wellcome } from "./Wellcome";
+import { CounterDisplay } from "./CounterDisplay";
 
 
 export function App() {
     return (
         <Conteiner>
-            <Wellcome />
+            <Routes>
+                <Route path="/" element={<Wellcome />} />
+                <Route path="Counter" element={<CounterDisplay />} />
+            </Routes>
         </Conteiner>
     )
 
