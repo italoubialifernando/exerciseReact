@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+/* import { useMemo } from "react";
 
 
 export function ListFiltered() {
@@ -16,7 +16,7 @@ export function ListFiltered() {
         { id: 10, name: 'Alice', age: 28 }
     ];
    const list =  array.map((index) => (index.age > 18) ? <li key={index.id}>{index.name} {index.age}</li> : '')
-    }
+   
     const saveList = useMemo(()=> list, [])
 
     return (
@@ -27,4 +27,4 @@ export function ListFiltered() {
             </ul>
         </div>
     )
-}
+} */

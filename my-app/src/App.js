@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { Conteiner } from "./Conteiner";
 import { Wellcome } from "./Wellcome";
 import { CounterDisplay } from "./CounterDisplay";
-
+import { GitHubUser } from "./GitHubUser";
 
 export function App() {
     return (
@@ -12,6 +12,7 @@ export function App() {
             <Routes>
                 <Route path="/" element={<Wellcome />} />
                 <Route path="Counter" element={<CounterDisplay />} />
+                <Route path="/:username" element={<GitHubUser />} />
             </Routes>
         </Conteiner>
     )
