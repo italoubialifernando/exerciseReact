@@ -1,19 +1,26 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 
 import { Conteiner } from "./Conteiner";
 import { Wellcome } from "./Wellcome";
 import { CounterDisplay } from "./CounterDisplay";
 import { GitHubUser } from "./GitHubUser";
+import { TodoList } from "./TodoList";
+import { HookCounter } from "./HookCounter";
 
 export function App() {
     return (
         <Conteiner>
             <Routes>
                 <Route path="/" element={<Wellcome />} />
-                <Route path="Counter" element={<CounterDisplay />} />
+                <Route path="/Counter" element={<CounterDisplay />} />
                 <Route path="/:username" element={<GitHubUser />} />
+                <Route path="/sum" element={<TodoList />} />
+                <Route path="/hookcounter" element={<HookCounter />} />
             </Routes>
+            <Link to="/Counter">Counter </Link>
+            <Link to="/sum">sum </Link>
+            <Link to="/hookounter">Counter </Link>
         </Conteiner>
     )
 
