@@ -1,10 +1,14 @@
 import { useGithubUser } from "./useGithubUser"
 
 export function GitHubUser(){
-const {users, error, isLoading} = useGithubUser()
+const {users, error, isLoading, onFetchUser} = useGithubUser()
 
+function handelGetUserData() {
+    onFetchUser()
+}
 
     return <div>
+        <button onClick={handelGetUserData}>Load user data</button>
         {isLoading && <h3>loading...</h3>}
         {error && <h3>ErroR ....</h3>}
         {users && <ul>
@@ -14,7 +18,7 @@ const {users, error, isLoading} = useGithubUser()
             </ul>}
     </div>
 }
-
+    
 
 
 
