@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-export function GitHubUser({ username }) {
+export function GitHubUser() {
+    
+    const { username } = useParams()
     const[data, setData] = useState(null)
 
     useEffect(() => {
@@ -13,5 +16,10 @@ export function GitHubUser({ username }) {
 /*     console.log(data.name) */
 
 
-    return <div>{data && <h1>{data.name}</h1>}</div>
+    return (
+    <div>
+        <h3>{ username }</h3>
+        {data && <p>{data.name}</p>}
+    </div>
+    )
 }

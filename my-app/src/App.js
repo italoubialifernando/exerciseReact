@@ -1,27 +1,24 @@
 import React from "react";
-import { CarDetails } from "./CarDetails";
+import { Route, Routes } from "react-router-dom";
+
 import { Conteiner } from "./Conteiner";
+import { Wellcome } from "./Wellcome";
+import { GitHubUser } from "./GitHubUser";
 import { GitHubUserList } from "./GitHubUserList";
-import { HookCounter } from "./HookCounter";
-import { ListFiltered } from "./ListFiltered";
-/* import { CounterDisplay } from "./CounterDisplay"; */
 
-
-/* 
-import { InteractiveWelcome } from "./InteractiveWelcome";
-import { LenguageContext } from "./LanguageContext";
-import { Login } from "./Login";
-import { Sum } from "./Sum";
-import { TodoList } from "./TodoList";
- */
 
 export function App() {
     return (
         <Conteiner>
-            <GitHubUserList />
-            <HookCounter />
-            <ListFiltered />x\
-            <CarDetails />
+
+            <Routes>
+                <Route path="/" element={<Wellcome />} />
+                <Route path="/user" element={<GitHubUserList />}>
+                    <Route index element={<h3>Add a user and select it?</h3>}/>
+                    <Route path=":username" element={<GitHubUser />} />
+                </Route>
+            </Routes>
+
         </Conteiner>
     )
 
