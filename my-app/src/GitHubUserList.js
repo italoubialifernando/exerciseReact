@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 export function GitHubUserList() {
 
@@ -9,6 +10,7 @@ export function GitHubUserList() {
 
     function handleChange(event) {
         setUser(event.target.value);
+        console.log(user)
     }
     function HandleUserList() {
         fetch(`https://api.github.com/users/${user}`)
@@ -16,7 +18,9 @@ export function GitHubUserList() {
             .then(json => {
                 setListUSer((list) => [...list, json.name])
                 setUser('')
-            })
+               
+            }) 
+        
 
     }
 
@@ -28,7 +32,10 @@ export function GitHubUserList() {
         <div>
             <h1>black List user</h1>
             <ul>
-                {listUser.map((name, index) => (<li key={index}>{name}</li>))}
+                {listUser.map((name, index) => (
+                <li key={index}>
+                    <Link to={"/user/"+ name }  >{name}</Link> 
+                    </li>))}
             </ul>
             <input
                 name="addListUser,"
@@ -36,6 +43,7 @@ export function GitHubUserList() {
                 onChange={handleChange}
             />
             <button onClick={HandleUserList} >add User to black List</button>
+            <Outlet />
         </div>
     )
 
