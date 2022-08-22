@@ -16,5 +16,10 @@ export function GitHubUser() {
 /*     console.log(data.name) */
 
 
-    return <div>{data && <h1>{data.name}</h1>}</div>
+    return (
+    <div>
+        <h3>{ username }</h3>
+        {data && <p>{data.name}</p>}
+    </div>
+    )
 }
