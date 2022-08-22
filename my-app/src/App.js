@@ -17,7 +17,11 @@ export function App() {
                 <Route path="/:username" element={<GitHubUser />} />
                 <Route path="/sum" element={<TodoList />} />
                 <Route path="/hookcounter" element={<HookCounter />} />
+                <Route path="*" element={<div><p>Not found</p>
+                    <Link to="/">Go Homepage </Link>
+                </div>} />
             </Routes>
+
             <Link to="/Counter">Counter </Link>
             <Link to="/sum">sum </Link>
             <Link to="/hookounter">Counter </Link>
