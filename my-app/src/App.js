@@ -14,6 +14,7 @@ export function App() {
             <Routes>
                 <Route path="/" element={<Wellcome />} />
                 <Route path="/user" element={<GitHubUserList />}>
+                    <Route index element={<h3>Add a user and select it?</h3>}/>
                     <Route path=":username" element={<GitHubUser />} />
                 </Route>
             </Routes>
