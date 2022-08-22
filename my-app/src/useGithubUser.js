@@ -1,4 +1,28 @@
-import { useState } from "react";
+import useSWR from 'swr'
+
+const fetcher = url => fetch(url).then(response => response.json())
+
+export function useGithubUser(username) {
+    const {data, error, mutate } =useSWR(`https://api.github.com/users/${username}`, fetcher)
+
+    function fetchGithubUser() {
+        mutate()
+    }
+
+    return{
+        users: data,
+        error,
+        isLoading: !data && !error,
+        onFetchUser: fetchGithubUser()
+    }
+}
+
+
+
+
+
+
+/* import { useState } from "react";
 
 export function GitHubUserList(user) {
     const [data, setData] = useState(null)
@@ -30,3 +54,4 @@ export function GitHubUserList(user) {
         loading
     }
 }
+ */
